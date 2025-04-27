@@ -1,0 +1,30 @@
+.container {
+    background-color: black;
+    border-radius: 2px;
+    height: 500px;
+    width: 400px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+
+.display{
+    margin: auto;
+    background-color: grey;
+    height: 100px;
+    width: 390px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 10px;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+button {
+    height: 80px;
+    width: 100px;
+}
