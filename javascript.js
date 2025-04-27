@@ -11,7 +11,7 @@ const multiply = function (a,b) {
 };
 
 const divide = function (a,b) {
-    if (b==0){
+    if (b == 0){
         return "ERROR"
     };
     return a/b;
@@ -26,6 +26,7 @@ let second = 0;
 let operator = "";
 let result = 0;
 let input = 0;
+let pastResult = false;
 
 const updateFirst = function (num) {
     first += num;
@@ -60,20 +61,16 @@ const produceResult = function () {
             result = subtract(first, second);
     };
 
-    if (result =="ERROR") {
+    if (result == "ERROR") {
         display.textContent = "ERROR";
-        input = 0;
-        first = 0;
-        second = 0;
-        operator = "";
-        result = 0;
+        clear();
         
-    } else {
+    } else { 
         result = limit(result);
         first = result;
+        pastResult = true;
         second = 0;
-        operator=""
-        console.log(result);
+        operator = ""
         display.textContent = result;
     }
     
@@ -86,16 +83,15 @@ const clear = function () {
     second = 0;
     operator = "";
     result = 0;
-    display.textContent = 0;
 }
 
 const buttonClick = function(e) {
-    if (display.textContent == "0" || display.textContent == "ERROR") {
-        display.textContent = ""
-    };
-
     if (numbers.includes(e.target.value)) {
         if (operator==""){  
+            if (pastResult) {
+                clear();
+                pastResult = false;
+            };
             updateFirst(e.target.value);
             display.textContent = parseFloat(first);
         } else {
@@ -113,6 +109,7 @@ const buttonClick = function(e) {
         produceResult();
     } else if (e.target.value=="AC") {
         clear();
+        display.textContent = 0;
     } else if (e.target.value == "sign") {
         if (operator==""){  
             first = 0 - first;
@@ -132,9 +129,6 @@ const buttonClick = function(e) {
     };
 };
 
-const clearContent = function() {
-    display.textContent = "0";
-}
 
 for (let i = 0; i < buttonList.length; i++) {
     buttonList[i].addEventListener("click", buttonClick);
