@@ -1,6 +1,6 @@
 .container {
     background-color: black;
-    border-radius: 2px;
+    margin: 30px;
     height: 500px;
     width: 400px;
 }
@@ -26,5 +26,11 @@ body {
 
 button {
     height: 80px;
-    width: 100px;
+    width: 97px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.zero {
+    width: 197px;
 }
