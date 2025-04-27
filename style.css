@@ -32,5 +32,17 @@ button {
 }
 
 .zero {
-    width: 197px;
+    width: 198px;
+}
+
+.number {
+    background-color: turquoise;
+}
+
+.sign {
+    background-color: orange;
+}
+
+.top {
+    background-color: lightblue;
 }

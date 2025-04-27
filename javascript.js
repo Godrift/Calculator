@@ -61,8 +61,13 @@ const produceResult = function () {
     };
 
     if (result =="ERROR") {
-        clear();
-        display.textContent = result;
+        display.textContent = "ERROR";
+        input = 0;
+        first = 0;
+        second = 0;
+        operator = "";
+        result = 0;
+        
     } else {
         result = limit(result);
         first = result;
@@ -81,7 +86,7 @@ const clear = function () {
     second = 0;
     operator = "";
     result = 0;
-    display.textContent = "0"
+    display.textContent = 0;
 }
 
 const buttonClick = function(e) {
